@@ -62,7 +62,7 @@
     }
     
     /* Basic responsive adjustments */
-    @media (max-width: 768px) {
+    /* @media (max-width: 768px) {
       .gallery {
         gap: 40px;
       }
@@ -72,5 +72,5 @@
       .gallery {
         gap: 30px;
       }
-    }
+    } */
 </style>
