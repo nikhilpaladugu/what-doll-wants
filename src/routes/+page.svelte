@@ -26,6 +26,7 @@
                 hoverSrc="images/color/wdw_1.jpg"
                 alt="Image 1" 
                 alignment="right"
+                defaultBlendMode="normal"
               />
               </div>
             </div>
@@ -36,6 +37,7 @@
                 hoverSrc="images/color/wdw_2.jpg"
                 alt="Image 1" 
                 alignment="right"
+                defaultBlendMode="normal"
               />
               </div>
             </div>
@@ -50,19 +52,19 @@
     </section>
 
     <!-- spread 2 -->
-    <section>
+    <section class="section">
               <div class="image-container-full-spread">
                 <HoverImage 
                 defaultSrc="images/bw/wdw_3.jpg" 
                 hoverSrc="images/color/wdw_3.jpg"
                 alt="Image 1"
-                alignment="center"
+                alignment="right"
                 />
               </div>
     </section>
 
     <!-- spread 3 -->
-    <section>
+    <section class="section">
       <div class="two-column">
         <div class="column">
           <div class="image-container">
@@ -91,7 +93,7 @@
     </section>
 
     <!-- spread 4 -->
-    <section>
+    <section class="section">
       <div class="two-column">
         <div class="column">
           <div class="image-container">
@@ -99,7 +101,7 @@
           </div>
         </div>
       <div class="column">
-        <div class="split-vertical">
+        <div class="split-vertical2">
           <div class="image-box-2">
             <div class="image-container">
               <HoverImage 
@@ -120,7 +122,7 @@
     </section>
 
     <!-- spread 5 -->
-    <section>
+    <section class="section">
       <div class="two-column">
         <div class="column">
           <div class="split-vertical">
@@ -172,7 +174,7 @@
     </section>
 
     <!-- spread 6 -->
-    <section>
+    <section class="section">
       <div class="two-column">
         <div class="column">
           <div class="image-container">
@@ -188,7 +190,7 @@
     </section>
 
     <!-- spread 7 -->
-    <section>
+    <section class="section">
       <div class="two-column">
         <div class="column">
           <div class="image-container">
@@ -197,6 +199,7 @@
                 hoverSrc="images/color/wdw_10.jpg"
                 alt="Image 1"
                 alignment="right"
+                imageOnlySpread="true"
               />
           </div>
         </div>
@@ -206,6 +209,7 @@
                 defaultSrc="images/bw/wdw_11.jpg" 
                 hoverSrc="images/color/wdw_11.jpg"
                 alt="Image 1"
+                imageOnlySpread="true"
               />
           </div>
         </div>
@@ -233,23 +237,27 @@
             display: flex;
             flex-direction: column;
             justify-content: center; /* Center content vertically */
-            align-items: center; /* Center content horizontally */
-            padding: 0;
+            align-items: flex-end;; /* Center content horizontally */
+            padding: 15px;
             position: relative;
             box-sizing: border-box;
             overflow: hidden;
+            /* border: 2px solid yellow; */
     }
 
     .two-column {
             display: flex;
             width: 100%;
-            height: 90vh;
+            height: 100vh;
             margin: 0;
             box-sizing: border-box;
+            align-items: flex-end;
+            justify-content: flex-end;
     }
 
     .column {
-            width: 50%;
+            width: auto;
+            flex-shrink: 0;
             padding: 15px;
             /* border: 2px solid lime; */
             box-sizing: border-box;
@@ -257,7 +265,7 @@
 
     .image-container {
             width: 100%;
-            height: 80vh; /* Takes most of the section height */
+            height: 100vh; /* Takes most of the section height */
             overflow: hidden;
             margin-bottom: 0;
             /* border: 2px solid blue; */
@@ -266,11 +274,12 @@
 
     .image-container-full-spread {
             width: 100%;
-            height: 80vh; /* Takes most of the section height */
+            height: 100vh; /* Takes most of the section height */
             overflow: hidden;
             margin-bottom: 0;
             /* border: 2px solid blue; */
             display: flex;
+            justify-content: flex-end;
     }
 
     .image-container img {
@@ -286,22 +295,39 @@
           margin-right: 0;
         }
 
+        .column:nth-child(2) .image-container img{
+          /* object-position: right; */
+          margin-left: auto;
+          margin-right: 0;
+        }
+
+      .column:nth-child(2){
+        width: auto;
+      }
+
     .split-vertical {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            height: 80vh;
+            height: 100vh;
             gap: 20px; /* Gap between images */
+    }
+
+    .split-vertical2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
     }
 
     .image-box {
             width: 100%;
-            height: calc(40vh - 20px);
+            height: calc(50vh - 20px);
     }
 
     .image-box-2 {
             width: 100%;
-            height: calc(65vh - 20px);
+            height: calc(85vh - 20px);
     }
 
     .image-box-2 .image-container {
@@ -311,7 +337,7 @@
 
     .image-box-3 {
             width: 100%;
-            height: calc(15vh - 20px);
+            height: calc(15vh);
     }
 
     .image-box-3 .image-container {

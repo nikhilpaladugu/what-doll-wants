@@ -9,8 +9,9 @@
     export let className = "";
     export let defaultBlendMode = "multiply"; // Default to multiply
     export let hoverBlendMode = "normal";     // Default to normal
-    export let transitionDuration = 300; // Duration in ms, can be customized
+    export let transitionDuration = 0; // Duration in ms, can be customized
     export let alignment = "left"; // Accepts "left", "center", or "right"
+    export let imageOnlySpread = "false";
   
     // State to track if mouse is hovering
     let isHovering = false;
@@ -31,9 +32,11 @@
     }
   
     // Calculate the current blend mode based on the progress
-    $: blendMode = $hoverProgress > 0.5 ? hoverBlendMode : defaultBlendMode;
+    // $: blendMode = $hoverProgress > 0.5 ? hoverBlendMode : defaultBlendMode;
     
     $: alignmentClass = `align-${alignment}`;
+
+    $: imageOnlySpread = `padding-${imageOnlySpread}`;
   </script>
 
     <div 
@@ -46,7 +49,7 @@
     src={defaultSrc}
     {alt}
     class="image default-image"
-    style="opacity: {1 - $hoverProgress}; mix-blend-mode: {blendMode};"
+    style="opacity: {1 - $hoverProgress};"
     />
 
     <!-- Hover image (visible when hovering) -->
@@ -54,10 +57,12 @@
     src={hoverSrc}
     {alt}
     class="image hover-image"
-    style="opacity: {$hoverProgress}; mix-blend-mode: {blendMode};"
+    style="opacity: {$hoverProgress};"
     />
     </div>
 
+    <!-- style="opacity: {1 - $hoverProgress}; mix-blend-mode: {blendMode};" -->
+    <!-- style="opacity: {$hoverProgress}; mix-blend-mode: {blendMode};" -->
     <style>
         .hover-image-container {
           position: relative;
@@ -89,10 +94,18 @@
           width: 100%;
           height: 100%;
           object-fit: cover;
-          transition: mix-blend-mode 0.15s ease;
+          /* transition: mix-blend-mode 0.15s ease; */
         }
         
         .default-image {
           position: relative; /* Not absolute so it sets the container dimensions */
+        }
+
+        .padding-false {
+          padding: 0%;
+        }
+
+        .padding-true {
+          padding: 10%;
         }
       </style>
