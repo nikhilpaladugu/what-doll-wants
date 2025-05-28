@@ -7,8 +7,8 @@
     export let hoverSrc = "";
     export let alt = "";
     export let className = "";
-    export let defaultBlendMode = "multiply"; // Default to multiply
-    export let hoverBlendMode = "normal";     // Default to normal
+    // export let defaultBlendMode = "multiply"; // Default to multiply
+    // export let hoverBlendMode = "normal";     // Default to normal
     export let transitionDuration = 0; // Duration in ms, can be customized
     export let alignment = "left"; // Accepts "left", "center", or "right"
     export let imageOnlySpread = "false";

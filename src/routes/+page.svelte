@@ -26,7 +26,6 @@
                 hoverSrc="images/color/wdw_1.jpg"
                 alt="Image 1" 
                 alignment="right"
-                defaultBlendMode="normal"
               />
               </div>
             </div>
@@ -37,7 +36,6 @@
                 hoverSrc="images/color/wdw_2.jpg"
                 alt="Image 1" 
                 alignment="right"
-                defaultBlendMode="normal"
               />
               </div>
             </div>
